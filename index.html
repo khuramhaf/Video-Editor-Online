@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5633395087350535"
+  crossorigin="anonymous"></script>
+ 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-36TNB1000S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36TNB1000S');
+</script>
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Video Editor that can perform Video Trimming and Cutting. You can also apply audio effects.">
+    <meta name="keywords" content="Online Video Editor, Voice Recorder, Sound Recorder, MP3 Editor Online, Audio Effects Editor, Audio Cutter, Audio Editing Software, Audio Trimmer, Two Channels Audio Editing, online audio trimmer, audio trimmer online, free online audio editor, audio trimmer, cut audio online, online audio cutter, multiple audio cutter online, audio trim online, free audio trimmer online, mp3 cut, trim mp3" />
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="wufile.js"></script>
+    <script src="play.js"></script>
+    <script src="wutrim.js"></script>
+    <script src="wucut.js"></script>
+    <script src="undo.js"></script>
+   <script src="export.js"></script>
+   <script src="fades.js"></script>
+   <script src="fadespreview.js"></script>
+   <script src="biquad.js"></script>
+   <script src="biquadpreview.js"></script>
+   <script src="loadsample.js"></script>
+   <script src="chrous.js"></script>
+   <script src="chrouspreview.js"></script>
+   <script src="distortion.js"></script>
+   <script src="compressor.js"></script>
+   <script src="compressorpreview.js"></script>
+   <script src="distortionpreview.js"></script>
+   <script src="echo.js"></script>
+   <script src="echopreview.js"></script>
+   <script src="recorder.js"></script>
+   <script src="playback.js"></script>
+   <script src="playbackpreview.js"></script>
+   <script src="reverb.js"></script>
+   <script src="reverbpreview.js"></script>
+   <script src="drawing.js"></script>
+
+  <script src="tuna.js"></script>
+  <script src="pingpong.js"></script>
+  <script src="pingpongpreview.js"></script>
+
+  <script src="overdrive.js"></script>
+  <script src="overdrivepreview.js"></script>
+  <script src = "mp4box.js"></script>
+
+  <script src = "mp4-muxer.js"></script>
+
+
+
+
+
+ 
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Online Video Editor</title>
+</head>
+<body>
+<div id = "ad">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '6b1f2aa57727a7bdef3f2b00133cc17e',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="//www.highcpmcreativeformat.com/6b1f2aa57727a7bdef3f2b00133cc17e/invoke.js"></scr' + 'ipt>');
+  </script>
+
+</div>
+<div style="width:100%; position: absolute; background-color: blue; height:100vh" id = "spinner1"><div class="spinner" id="Spinner"></div></div>
+
+  
+  <div id = "gainux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+    <button onclick="displaynone1()" style="float:right">x</button>
+    <h5>Fade In and Out</h5>
+  
+
+    <div>
+    <label>Starting Gain:</label>
+    <button style="margin-left: 10%;float:right" onclick="fadespreview()">Preview</button>
+    
+    <br/>
+    <input id="gainstart" type="number" required/>
+    <br/>
+    <label>Ending Gain:</label>
+    <br/>
+    <input id="gainreach" type="number" required/>
+    </div>
+    <br/>
+   
+   
+    <label>Select Option:</label>
+        <br/>
+    <select id ="gainselect">
+        <option>set value at time</option>
+        <option>linear ramp</option>
+        <option>exponential ramp</option>
+    </select>
+    <br/>
+    <button onclick="fades()">Apply</button>
+    
+    
+    </div>
+
+
+  
+    <div id = "chrousux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone3()" style="float:right">x</button>
+
+      <h5>Chrous</h5>
+      <div>
+      <label>Depth:</label>
+      <button style="margin-left: 10%;float:right;" onclick="chrouspreview1()">Preview</button>
+      
+      <br/>
+      <input id="depth" type="number" required/>
+      <br/>
+      <label>Rate:</label>
+      <br/>
+      <input id="rate" type="number" required/>
+      </div>
+      <br/>
+
+      
+      <label>Select Option:</label>
+          <br/>
+      <select id ="chrousselect">
+          <option>sine</option>
+          <option>square</option>
+          <option>sawtooth</option>
+          <option>triangle</option>
+      </select>
+      <br/>
+      <button onclick="chrous1()">Apply</button>
+      
+      
+      </div>
+
+
+
+
+      
+
+  
+    <div id = "disux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone4()" style="float:right">x</button>
+
+      <h5>Distortion</h5>
+      <div>
+      <label>Gain:</label>
+      <button style="margin-left: 10%;float:right" onclick="distortionpreview1()">Preview</button>
+      
+      <br/>
+      <input id="gain1" type="number" required/>
+      <br/>
+      <label>Amount:</label>
+      <br/>
+      <input id="amount" type="number" required/>
+      </div>
+      <br/>
+      <button onclick="distortion1()">Apply</button>
+      
+      
+      </div>
+
+
+
+    <div id = "biquadux" style=" height: 450px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone2()" style="float:right">x</button>
+
+      <h5>Biquad Filter</h5>
+      <div>
+      <label>Frequency:</label>
+      <button style="margin-left: 10%;float:right" onclick="biquadpreview()">Preview</button>
+      <br/>
+      <input id="frequency" type="number" required/>
+      <br/>
+      <label>Frequency Reach:</label>
+      <br/>
+      <input id="reach" type="number" required/>
+      <br/>
+      <label>Q Value:</label>
+      <br/>
+      <input id="qvalue" type="number" required/>
+      <br/>
+      <label>Gain:</label>
+      <br/>
+      <input id="gain" type="number" required/>
+      </div>
+      <br/>
+      <label>Select Option:</label>
+          <br/>
+      <select id ="type">
+          <option>low pass</option>
+          <option>high pass</option>
+          <option>band pass</option>
+          <option>low shelf</option>
+          <option>high shelf</option>
+          <option>peaking</option>
+          <option>notch</option>
+            <option>all pass</option>
+      </select>
+      <br/>
+     
+      <label>Select Option:</label>
+          <br/>
+      <select id ="freqselect">
+          <option>set value at time</option>
+          <option>linear ramp</option>
+          <option>exponential ramp</option>
+      </select>
+      <br/>
+      <button onclick="biquad()">Apply</button>
+      
+      
+      </div>
+   
+      <div id = "compressionux" style=" height: 400px;position:absolute;background-color:red; padding:20px;">
+        <button onclick="displaynone5()" style="float:right">x</button>
+
+        <h5>Compression</h5>
+        <div>
+        <label>Threshold (between -100 to 0):</label>
+        <button style="margin-left:10%;float:right" onclick="compressorpreview1()">Preview</button>
+
+        
+        <br/>
+        <input  id="threshold" type="number"  required/>
+        <br/>
+        <label>Knee (between 0 to 40):</label>
+        <br/>
+        <input  id="knee" type="number"  required/>
+        <br/>
+        <label>Ratio (between 1 to 20):</label>
+        <br/>
+        <input  id="ratio" type="number"  required/>
+        <br/>
+        <label>Attack (between 0 to 1):</label>
+        <br/>
+        <input  id="attack" type="number"  required/>
+        <br/>
+        <label>Release (between 0 to 1):</label>
+        <br/>
+        <input  id="release" type="number"  required/>
+        </div>
+        <button onclick="compressor1()">Apply</button>
+    
+    
+    </div> 
+
+
+  
+    <div id = "echoux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+      <button onclick="displaynone6()" style="float:right">x</button>
+
+      
+      <h5>Echo</h5>
+      <div>
+      <label>Delay (between 0 and 1):</label>
+      <button style="margin-left:10%;float:right" onclick="echopreview1()">Preview</button>
+
+      
+      <br/>
+      <input id="delay" type="number" required/>
+      <br/>
+      <label>Feedback:</label>
+      <br/>
+      <input id="feedback" type="number" required/>
+      <br/>
+      </div>
+      <button onclick="echo1()">Apply</button>
+  
+  
+  </div> 
+
+
+  <div id = "playbackux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+    <button onclick="displaynone7()" style="float:right">x</button>
+
+    
+    <h5>Playback Rate</h5>
+    <div>
+    <label>Playback Rate:</label>
+    <button style="margin-left:10%;float:right" onclick="playbackpreview1()">Preview</button>
+
+    
+    <br/>
+    <input id="playbackrate" type="number" required/>
+    <br/>
+    </div>
+    <button onclick="playback1()">Apply</button>
+
+
+</div>  
+
+
+
+
+<div id = "reverbux" style=" height: 300px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone8()" style="float:right">x</button>
+
+<h5>Reverb</h5>
+<div>
+<label>Wet:</label>
+<button style="margin-left:10%;float:right" onclick="reverbpreview1()">Preview</button>
+
+
+<br/>
+<input id="wet" type="number" required/>
+<br/>
+<label>Gain:</label>
+<br/>
+<input id="gain2" type="number" required/>
+<br/>
+</div>
+<button onclick="reverb1()">Apply</button>
+
+
+</div>  
+
+
+
+
+
+<div id = "pingpongux" style=" height: 320px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone9()" style="float:right">x</button>
+
+<h5>Pingpong Delay</h5>
+<div>
+<label>Wet (0 to 1):</label>
+<button style="margin-left:10%;float:right" onclick="pingpongpreview1()">Preview</button>
+
+
+<br/>
+<input id="pingwet" type="number" required/>
+<br/>
+<label>Feedback (0 to 1):</label>
+<br/>
+<input id="pingfeedback" type="number" required/>
+<br/>
+<label>Delay Time Left (1 to 10000):</label>
+<br/>
+<input id="dtl" type="number" required/>
+<br/>
+<label>Delay Time Right (1 to 10000):</label>
+<br/>
+<input id="dtr" type="number" required/>
+<br/>
+</div>
+<button onclick="pingpong1()">Apply</button>
+
+
+</div>  
+
+
+
+
+<div id = "overdriveux" style=" height: 320px;position:absolute;background-color:red; padding:20px;">
+  <button onclick="displaynone10()" style="float:right">x</button>
+
+<h5>Over Drive</h5>
+<div>
+<label>Output Gain (0 to -42):</label>
+<button style="margin-left:10%;float:right" onclick="overdrivepreview1()">Preview</button>
+
+
+<br/>
+<input id="outputgain" type="number" required/>
+<br/>
+<label>Drive (0 to 1):</label>
+<br/>
+<input id="drive" type="number" required/>
+<br/>
+<label>Curve Amount (0 to 1):</label>
+<br/>
+<input id="curveamount" type="number" required/>
+<br/>
+<label>Algorithm Index (0 to 5):</label>
+<br/>
+<input id="algorithmindex" type="number" required/>
+<br/>
+</div>
+<button onclick="overdrive1()">Apply</button>
+
+
+</div>  
+
+
+
+
+    <div id ="container">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img src="amooiz.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../about.html">About</a>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Products
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../index.html">Audio Editor Mono</a></li>
+                         <li><a class="dropdown-item" href="../new/index.html">Audio Editor Stereo</a></li>
+                      <li><a class="dropdown-item" href="../video-editor.html">Video Editor</a></li>
+                      <li><a class="dropdown-item" href="index.html">Video Editor</a></li>
+
+                      <li><a class="dropdown-item" href="../graphic-editor.html">Graphic Editor</a></li>
+                      
+                      <li><a class="dropdown-item" href="../neural-network.html">Neural Network</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../privacy-policy.html">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+
+              <button style="float:right;" onclick="loadsample()">Load Sample</button>
+              <button style="float:right;" onclick="exportdata()">export</button>
+            </div>
+           
+          </nav>
+    
+    
+    
+        <h1>Online Video Editor</h1>
+
+     
+    <div class="input-group mb-3">
+        <div class = "col-sx-3">
+        <input type="file" class="form-control" id="inputGroupFile02" onchange="myFunction()">
+       </div> <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div>
+    <span id="status"></span>
+    <div>
+    <span>Error: </span>
+    <span style="color:red" id = "error"></span>
+</div>
+    <div id = "audioinfo">
+    <span >Audio Time: </span>
+    <span id = 'timer'>0</span>
+    <span  class ="info">Audio Duration: </span>
+    <span   id = 'duration'>0</span>
+    <br id = "linebreak"/>
+    <span id ="totallength1"  class="info" >Total Length: </span>
+    <span  id = 'totallength'>0</span>
+    <span  class="info">Selected Length: </span>
+    <span  id = 'selectedlength'>0</span>
+</div>
+
+    <div style=" background-color:lightblue;padding:15px;">
+        
+     
+    <div id ="information">
+
+    
+
+</div>
+<canvas style="border:2px solid black" id = "canvas1"></canvas>
+<canvas id="canvas12" style="border:1px solid black; background-color: gainsboro;"></canvas>
+<canvas onclick="drawline1()"  onmousedown="mouseDown(event)" onmousemove="mouseMove(event)" onmouseup="mouseUp(event)"  id ="canvas11" width="1290" height="150" style="background-color: blue;"></canvas>
+<canvas height = "20" width="1290" id="canvas13" style="border:1px solid black; background-color: gainsboro;"></canvas>
+<br/>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Starting Time in Seconds</span>
+  <div class = "col-sx-3">
+  <input oninput="keydownfun(this)" id = "start" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Ending Time in Seconds</span>
+    <div class = "col-sx-3">
+    <input oninput="keydownfun(this)"  id = "end" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+</div>
+
+
+
+        <div id = "button" class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary"onclick="play()">Play</button>
+            <button type="button" class="btn btn-primary" onclick="stop()">Stop</button>
+            <button id = "recorder1" type="button" class="btn btn-primary" onclick="recorder()">Start Recording</button>
+            <button id = "stopreco" type="button" class="btn btn-danger" onclick="stopRecording()">Stop Recording</button>
+
+            <button type="button" class="btn btn-primary" onclick="trim()">Delete</button>
+            <button type="button" class="btn btn-primary" onclick="cut()">Cut</button>
+            <button type="button" class="btn btn-primary" onclick="undodata()">Undo</button>
+          
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               Audio Effects
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" onclick="gain()">Gain</a></li>
+                <li><a class="dropdown-item" onclick="frequency()">Biquad Filter</a></li>
+                <li><a class="dropdown-item" onclick="chrous()">Chorus</a></li>
+                <li><a class="dropdown-item" onclick="distortion()">Distortion</a></li>
+                <li><a class="dropdown-item" onclick="compression()">Compression</a></li>
+                <li><a class="dropdown-item" onclick="echo()">Echo</a></li>
+                <li><a class="dropdown-item" onclick="playback()">Playback</a></li>
+                <li><a class="dropdown-item" onclick="reverb()">Reverb</a></li>
+                <li><a class="dropdown-item" onclick="pingpong()">PingPong Delay</a></li>
+                <li><a class="dropdown-item" onclick="overdrive()">Over Drive</a></li>
+
+              
+              </ul>
+            </div>
+          </div>
+
+
+
+</div>
+
+
+<p>Online Video Editor that can perform Video Deleting and Cutting. This is purely
+   browser based video editor and you do not require to upload any file to the server. You can also apply audio effects.
+</p>
+
+</div>
+
+
+   
+   <script>
+
+   
+        var bufferarray = [];
+        var audiocontext;
+        var source;
+        var time=0;
+        let intervalid;
+        var check = null;
+        var sourcecheck = null;
+        var sourceduration = 0;
+        var undo = [];
+        var source1;
+        var intervalid12
+        var rectx = 0;
+var recty =0
+var rectwidth = 0;
+var rectheight = 0;
+
+var rect1x=0;
+var rect1y = 0;
+var rectangle = 0;
+
+
+var rect1width = 0;
+var rect1height = 0;
+
+//video variables
+var videodata=[]
+        var codecinfo;
+        var avcC;
+
+        var videointerval;
+var videochunk =[];
+
+var exportflag=0;
+var keyframe;
+
+var undo1=[]
+
+        var videoinfo = {
+          width:0,
+          height:0,
+          duration:0,
+          samplerate:0,
+        }
+
+
+
+
+      
+    
+
+
+
+
+function stop(){
+if (source){
+    source.stop();
+    clearInterval(intervalid);
+}
+
+if (source1){
+    source1.stop();
+}
+
+clearInterval(intervalid12)
+}
+
+
+    
+function keydownfun(){
+
+if (check!==null){
+
+var start =parseFloat(document.getElementById("start").value)
+var end =parseFloat(document.getElementById("end").value);
+var index = end*audiocontext.sampleRate - start*audiocontext.sampleRate;
+document.getElementById("selectedlength").innerHTML=parseInt(index);
+}
+
+document.getElementById("error").innerHTML = "";
+}
+
+
+function gain(){
+
+  document.getElementById("gainux").style.display = "block"
+}
+
+
+function frequency(){
+
+document.getElementById("biquadux").style.display = "block"
+}
+
+function chrous(){
+
+  document.getElementById("chrousux").style.display = "block"
+
+}
+
+function distortion(){
+
+document.getElementById("disux").style.display = "block"
+
+}
+
+function compression(){
+
+document.getElementById("compressionux").style.display = "block"
+
+}
+
+
+function echo(){
+
+document.getElementById("echoux").style.display = "block"
+
+}
+
+function playback(){
+
+document.getElementById("playbackux").style.display = "block"
+
+}
+
+function reverb(){
+
+document.getElementById("reverbux").style.display = "block"
+
+}
+
+function pingpong(){
+
+document.getElementById("pingpongux").style.display = "block"
+
+}
+
+
+function overdrive(){
+
+document.getElementById("overdriveux").style.display = "block"
+
+}
+
+
+function displaynone1(){
+
+  document.getElementById("gainux").style.display = "none"
+}
+
+function displaynone2(){
+
+document.getElementById("biquadux").style.display = "none"
+}
+
+
+function displaynone3(){
+
+document.getElementById("chrousux").style.display = "none"
+}
+
+function displaynone4(){
+
+document.getElementById("disux").style.display = "none"
+}
+
+function displaynone5(){
+
+document.getElementById("compressionux").style.display = "none"
+}
+
+
+function displaynone6(){
+
+document.getElementById("echoux").style.display = "none"
+}
+
+function displaynone7(){
+
+document.getElementById("playbackux").style.display = "none"
+}
+
+
+function displaynone8(){
+
+document.getElementById("reverbux").style.display = "none"
+}
+
+
+function displaynone9(){
+
+document.getElementById("pingpongux").style.display = "none"
+}
+
+
+
+function displaynone10(){
+
+document.getElementById("overdriveux").style.display = "none"
+}
+
+
+
+
+
+var videoDecoder = new VideoDecoder({
+  output: processVideo,
+  error: onDecoderError,
+});
+
+function processVideo(frame){
+
+var arraybuffer = new ArrayBuffer(frame.allocationSize())
+
+frame.copyTo(arraybuffer);
+
+videodata.push(arraybuffer);
+    frame.close();
+
+if (videoDecoder.decodeQueueSize ===0){
+
+  document.getElementById("status").innerHTML = "";
+        document.getElementById("Spinner").style.display = "none"
+        document.getElementById("spinner1").style.display = "none"
+}
+
+    
+}
+
+function onDecoderError(error){
+
+    console.log(error);
+}
+    </script>
+
+  
+</body>
+</html>
